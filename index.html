@@ -2,55 +2,100 @@
 <html lan="es">
 <head>
   <meta charset="UTF-8">
-  <title>Portafolio Académico</title>
+  <title>Perfil Académico</title>
   <link rel="icon" type="image/png" href="favicon.png">
   <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f4f7f6; 
-            color: #333333;            
-            max-width: 800px;          
-            margin: 40px auto;        
-            padding: 20px;
-            background: white;         
-            border-radius: 8px;       
-            box-shadow: 0 4px 8px rgba(0,0,0,0.05); 
-        }
+    /* Configuración Base y Fondo Oscuro */
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #0d1117; /* Gris oscuro estilo GitHub Dark */
+        color: #c9d1d9; /* Texto claro suave para que no canse la vista */
+        margin: 0;
+        padding: 40px 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 
-      
-        h1 {
-            color: #2c3e50;           
-            border-bottom: 3px solid #3498db; 
-            padding-bottom: 10px;
-        }
+    /* Contenedor Principal (Abarca más ancho de pantalla) */
+    .container {
+        max-width: 1000px; /* Incrementamos el ancho a 1000px */
+        width: 100%;
+    }
 
-       
-        h2 {
-            color: #16a085;           
-            margin-top: 30px;
-        }
+    /* Títulos Principales */
+    h1 {
+        color: #58a6ff; /* Azul tecnológico brillante */
+        font-size: 2.5rem;
+        border-bottom: 2px solid #21262d;
+        padding-bottom: 10px;
+        margin-bottom: 30px;
+    }
 
-       
-        a {
-            color: #2980b9;
-            text-decoration: none;     
-            font-weight: bold;
-        }
+    h2 {
+        color: #2ea043; /* Verde éxito/tecnológico */
+        font-size: 1.6rem;
+        margin-top: 40px;
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+    }
 
-      
-        a:hover {
-            color: #e74c3c;           
-            text-decoration: underline; 
-        }
+    /* Enlaces Interactivos */
+    a {
+        color: #58a6ff;
+        text-decoration: none;
+        transition: color 0.3s ease, text-decoration 0.3s ease;
+    }
 
-       
-        hr {
-            border: 0;
-            height: 1px;
-            background: #e0e0e0;
-            margin: 25px 0;
-        }
-    </style>
+    a:hover {
+        color: #79c0ff;
+        text-decoration: underline;
+    }
+
+    /* Sistema de Tarjetas (Grid) para rellenar el espacio vacío */
+    ul {
+        list-style: none;
+        padding: 0;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Distribuye en columnas automáticas */
+        gap: 20px; /* Espacio entre tarjetas */
+    }
+
+    /* Estilo de cada elemento de la lista transformado en tarjeta */
+    li {
+        background-color: #161b22; /* Fondo de la tarjeta */
+        border: 1px solid #30363d; /* Borde sutil */
+        border-radius: 8px;
+        padding: 20px;
+        transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+
+    li:hover {
+        transform: translateY(-5px); /* Efecto flotante al pasar el mouse */
+        border-color: #58a6ff; /* El borde se ilumina en azul */
+    }
+
+    strong {
+        color: #f0f6fc; /* Resaltados más brillantes */
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    /* Líneas divisorias modernas */
+    hr {
+        border: 0;
+        height: 1px;
+        background-color: #30363d;
+        margin: 40px 0;
+    }
+
+    /* Párrafos informativos */
+    p {
+        line-height: 1.6;
+        color: #8b949e;
+    }
+</style>
   
 </head>
 <body>
