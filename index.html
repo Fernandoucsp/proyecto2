@@ -4,99 +4,131 @@
   <meta charset="UTF-8">
   <title>Perfil Académico</title>
   <link rel="icon" type="image/png" href="favicon.png">
-  <style>
-    /* Configuración Base y Fondo Oscuro */
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
+
+<style>
     body {
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        background-color: #0d1117; /* Gris oscuro estilo GitHub Dark */
-        color: #c9d1d9; /* Texto claro suave para que no canse la vista */
+        font-family: 'JetBrains Mono', monospace;
+        background-color: #060913; 
+        color: #a2b1cd; 
         margin: 0;
-        padding: 40px 20px;
+        padding: 50px 20px;
         display: flex;
         flex-direction: column;
         align-items: center;
+        background-image: 
+            radial-gradient(circle at 20% 30%, rgba(0, 242, 254, 0.03) 0%, transparent 40%),
+            radial-gradient(circle at 80% 70%, rgba(157, 78, 221, 0.03) 0%, transparent 40%);
     }
-
-    /* Contenedor Principal (Abarca más ancho de pantalla) */
     .container {
-        max-width: 1000px; /* Incrementamos el ancho a 1000px */
+        max-width: 1100px;
         width: 100%;
+        position: relative;
     }
-
-    /* Títulos Principales */
+    .container::before {
+        content: "[ SYSTEM STATUS: ONLINE // CV_DEVSURFACE_V2.0.26 ]";
+        position: absolute;
+        top: -35px;
+        left: 0;
+        font-size: 0.75rem;
+        color: #00f2fe;
+        opacity: 0.4;
+        letter-spacing: 2px;
+    }
     h1 {
-        color: #58a6ff; /* Azul tecnológico brillante */
-        font-size: 2.5rem;
-        border-bottom: 2px solid #21262d;
-        padding-bottom: 10px;
-        margin-bottom: 30px;
+        color: #ffffff;
+        font-size: 2.2rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        border-bottom: 2px dashed #1f2e4d;
+        padding-bottom: 20px;
+        margin-bottom: 40px;
+        text-shadow: 0 0 10px rgba(0, 242, 254, 0.3);
     }
-
     h2 {
-        color: #2ea043; /* Verde éxito/tecnológico */
-        font-size: 1.6rem;
-        margin-top: 40px;
-        margin-bottom: 20px;
+        color: #00f2fe; 
+        font-size: 1.3rem;
+        margin-top: 50px;
+        margin-bottom: 25px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
         display: flex;
         align-items: center;
     }
-
-    /* Enlaces Interactivos */
+    h2::before {
+        content: "■ ";
+        color: #9d4ede; 
+        margin-right: 10px;
+        text-shadow: 0 0 8px #9d4ede;
+    }
     a {
-        color: #58a6ff;
+        color: #00f2fe;
         text-decoration: none;
-        transition: color 0.3s ease, text-decoration 0.3s ease;
+        transition: all 0.3s ease;
+        border-bottom: 1px dashed transparent;
     }
-
     a:hover {
-        color: #79c0ff;
-        text-decoration: underline;
+        color: #9d4ede;
+        border-bottom-color: #9d4ede;
+        text-shadow: 0 0 8px rgba(157, 78, 221, 0.5);
     }
-
-    /* Sistema de Tarjetas (Grid) para rellenar el espacio vacío */
     ul {
         list-style: none;
         padding: 0;
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Distribuye en columnas automáticas */
-        gap: 20px; /* Espacio entre tarjetas */
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 25px;
     }
-
-    /* Estilo de cada elemento de la lista transformado en tarjeta */
     li {
-        background-color: #161b22; /* Fondo de la tarjeta */
-        border: 1px solid #30363d; /* Borde sutil */
-        border-radius: 8px;
-        padding: 20px;
-        transition: transform 0.2s ease, border-color 0.2s ease;
+        background: rgba(16, 24, 48, 0.5);
+        border: 1px solid #1f2e4d;
+        border-radius: 6px;
+        padding: 25px;
+        position: relative;
+        overflow: hidden;
+        transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        box-shadow: inset 0 0 15px rgba(0, 242, 254, 0.02);
     }
-
     li:hover {
-        transform: translateY(-5px); /* Efecto flotante al pasar el mouse */
-        border-color: #58a6ff; /* El borde se ilumina en azul */
+        transform: translateY(-4px);
+        border-color: #00f2fe;
+        background: rgba(16, 24, 48, 0.8);
+        box-shadow: 0 0 20px rgba(0, 242, 254, 0.15), inset 0 0 10px rgba(0, 242, 254, 0.05);
     }
-
+    li::after {
+        content: "</>";
+        position: absolute;
+        bottom: 10px;
+        right: 15px;
+        font-size: 0.7rem;
+        color: #1f2e4d;
+        font-weight: bold;
+    }
+    li:hover::after {
+        color: rgba(0, 242, 254, 0.2);
+    }
     strong {
-        color: #f0f6fc; /* Resaltados más brillantes */
+        color: #ffffff;
+        font-size: 1rem;
         display: block;
-        margin-bottom: 5px;
+        margin-bottom: 8px;
+        letter-spacing: 0.5px;
     }
-
-    /* Líneas divisorias modernas */
     hr {
         border: 0;
         height: 1px;
-        background-color: #30363d;
-        margin: 40px 0;
+        background: linear-gradient(to right, transparent, #1f2e4d, #00f2fe, #1f2e4d, transparent);
+        margin: 50px 0;
+        opacity: 0.6;
     }
-
-    /* Párrafos informativos */
     p {
-        line-height: 1.6;
-        color: #8b949e;
+        line-height: 1.7;
+        color: #8fa0c0;
+        font-size: 0.95rem;
     }
 </style>
-  
 </head>
 <body>
   <h1>Portafolio Web</h1>
