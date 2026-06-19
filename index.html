@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html lan="es">
+<html lang="es">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Proyecto Final</title>
   <link rel="icon" type="image/png" href="favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -142,13 +143,35 @@
         opacity: 1;
         filter: drop-shadow(0 0 12px rgba(0, 242, 254, 0.3)); 
     }
-    @media (max-width: 768px) {
+   @media (max-width: 768px) {
+        body {
+            padding: 30px 15px;
+        }
         .logo-universidad {
             position: relative;
             top: 0;
             left: 0;
             margin-bottom: 20px;
             display: block;
+            height: 40px;
+        }
+        .container::before {
+            font-size: 0.65rem;
+            top: -25px;
+        }
+        h1 {
+            font-size: 1.6rem;
+            margin-bottom: 30px;
+        }
+        h2 {
+            font-size: 1.1rem;
+        }
+        ul {
+            grid-template-columns: 1fr;
+            gap: 15px;
+        }
+        li {
+            padding: 15px;
         }
     }
 </style>
@@ -195,11 +218,13 @@
  <p><a href="https://taiwaguti.github.io" target="_blank">Jhon Tacca</a></p>
  </li>
  <li>
- <p><a href="https://juan-alvis.github.io/My_page/PAGINA_JUANFER/" target="_blank">Juan Fernando</a></p>
+ <p><a href="https://layerlink-ops.github.io/melodian/">Cristian Mendoza</a></p>
  </li>
  <li>
  <p><a href="https://enzovi1009-a11y.github.io/" target="_blank">Enzo Casapia</a></p>
  </li>
+</ul>
+</div>
 </body>
 </html>
 
